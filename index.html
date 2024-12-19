@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول كأدمن</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .login-container button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>تسجيل الدخول كأدمن</h2>
+    <input type="password" id="adminPassword" placeholder="أدخل كلمة المرور">
+    <button onclick="loginAsAdmin()">تسجيل الدخول</button>
+</div>
+
+<script>
+    const adminPassword = "1234"; // كلمة المرور للأدمن
+
+    function loginAsAdmin() {
+        const passwordInput = document.getElementById("adminPassword").value;
+
+        if (passwordInput === adminPassword) {
+            alert("تم تسجيل الدخول كأدمن بنجاح!");
+            // حفظ حالة تسجيل الدخول في الذاكرة المؤقتة
+            localStorage.setItem("isAdminLoggedIn", "true");
+            // العودة إلى الصفحة الأصلية بعد تسجيل الدخول
+            window.location.href = "index.html"; // عد إلى الصفحة الأصلية
+        } else {
+            alert("كلمة المرور غير صحيحة!");
+        }
+    }
+</script>
+
+</body>
+</html>
